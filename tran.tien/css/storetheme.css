@@ -1,0 +1,21 @@
+
+:root{
+	--color-offwhite: #f4f4f4;
+}
+body{
+	background-color:var(--color-offwhite) ;
+}
+
+.product-grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.product-grid img{
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  display: block;
+}

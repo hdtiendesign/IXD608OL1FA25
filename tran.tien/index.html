@@ -4,54 +4,79 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Cool Website</title>
+
+	<link rel="stylesheet" href="lib/css/styleguide.css">
+	<link rel="stylesheet" href="css/storetheme.css">
+
 </head>
 <body>
 
 	<!-- header>h1+p -->
-	<header>
-		<h1>Cool Website</h1>
-		<p>Such a cool website</p>
+	<header class="navbar">
+		<div class="container display-flex">
+			<div class="flex-none">
+				<h1>Website</h1>
+			</div>	
+
+			<div class="flex-stretch"></div>		
+			<!-- nav.nav>ul>li*4>a[href=#article$]>{Link $} -->
+			<nav class="flex-none nav">
+				<ul class="container display-flex">
+					<li><a href="#article1">About</a></li>
+					<li><a href="#article2">Products</a></li>
+					<li><a href="#article3">Discounts</a></li>
+					<li><a href="#article4">Newsletters</a></li>
+				</ul>
+			</nav>
+		</div>
 	</header>
 
-	<!-- nav.nav>ul>li*4>a[href=#article$]>{Link $} -->
-	<nav class="nav">
-		<ul>
-			<li><a href="#article1">Link 1</a></li>
-			<li><a href="#article2">Link 2</a></li>
-			<li><a href="#article3">Link 3</a></li>
-			<li><a href="#article4">Link 4</a></li>
-		</ul>
-	</nav>
-
+	<div class="view-window" style="background-image:url('img/landscape.jpg')"></div>
 
 	<!-- .container>article#article$.article*4>h2{Article $}+div.article-body>p*3>lorem40 -->
 	<div class="container">
-		<article id="article1" class="article">
-			<h2>Article 1</h2>
+		<article id="article1" class="article card soft">
+			<div class="display-flex flex-align-center">
+				<div class="flex-stretch">
+					<h2>About The Store</h2>
+				</div>
+				<div class="flex-none"><small>5:20am</small></div>
+			</div>
 			<div class="article-body">
 				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas consectetur nulla sequi iusto nobis, aut consequatur suscipit eum quod laudantium reprehenderit assumenda voluptatem dolores doloribus, labore officia obcaecati perspiciatis numquam in ducimus, cupiditate! Ullam ab, quia ipsa sed natus iusto.</p>
 				<p>Adipisci consequatur assumenda a provident, nobis et accusamus. Officia ullam, ab voluptatibus earum veritatis, amet provident praesentium vel dicta perspiciatis distinctio, aliquid atque blanditiis culpa saepe voluptas hic eos dolor adipisci sunt nulla ad consequuntur voluptate? Dicta quidem ut repellendus!</p>
 				<p>Perspiciatis, at deserunt illum consequuntur cumque in quis mollitia distinctio, nulla laboriosam eveniet, adipisci corporis omnis magnam rem laudantium provident repudiandae! Illo, sunt, deserunt. Ipsam, ut eos dolorem. Recusandae neque, optio, aperiam minima ipsam explicabo! Porro perferendis molestias, nesciunt dolor.</p>
 			</div>
 		</article>
-		<article id="article2" class="article">
-			<h2>Article 2</h2>
+		<article id="article2" class="article card hard">
+			<h2>Products</h2>
 			<div class="article-body">
 				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo incidunt molestiae error vitae, neque deserunt ea architecto aut excepturi quam repudiandae sequi odio quae consectetur amet ipsam quod mollitia in repellat. Odit corrupti, eaque ipsum reiciendis quidem distinctio, at ullam?</p>
 				<p>Repellat est consequuntur natus, dicta nisi provident incidunt eum repellendus distinctio minus aliquam, sunt saepe aspernatur, veritatis reprehenderit iste non. Error a ullam ducimus consequuntur, quaerat dolore libero eos autem quibusdam sequi incidunt aliquid. Dolor, vel, provident. Nemo, odio, maiores!</p>
 				<p>Facere tempora itaque omnis veritatis eum explicabo delectus est accusantium, libero molestias illo blanditiis quam, accusamus nobis esse quasi reiciendis nisi ipsum laudantium sapiente enim alias unde! Est ducimus officia possimus ex deserunt, facere animi accusantium pariatur architecto, odio eligendi?</p>
 			</div>
+			<div class="product-grid">
+  				<img src="img/forest.jpg" alt="Product 1">
+  				<img src="img/ocean.jpg" alt="Product 2">
+  				<img src="img/snow.jpg" alt="Product 3">
+</div>
 		</article>
+	</div>
+
+	<div class="container">
 		<article id="article3" class="article">
-			<h2>Article 3</h2>
+			<h2>Discounts</h2>
 			<div class="article-body">
 				<p>Lorem ipsum, dolor sit amet consectetur, adipisicing elit. Est voluptatibus sit beatae vitae maiores itaque autem, distinctio aut cum modi reiciendis quis facere iusto deleniti odio suscipit vel dolores eum et nisi neque hic delectus. Voluptates odit expedita provident sit?</p>
 				<p>Laudantium sit reiciendis harum similique corrupti vero laborum repellat eos modi culpa veritatis corporis non perferendis, necessitatibus earum quisquam aperiam et? Ratione tempora tempore sapiente voluptatem quae quasi sequi ipsa, aliquid dolor ipsum maiores est, voluptas neque molestiae, quam soluta.</p>
 				<p>Excepturi, quasi. A asperiores, animi provident voluptates suscipit pariatur blanditiis sunt reprehenderit. Tempora quod, fugiat eius exercitationem est! Harum in est impedit exercitationem, molestias animi cupiditate repellat, tenetur non obcaecati veritatis sint sit quidem laboriosam, deserunt repudiandae ipsum nam eligendi?</p>
 			</div>
+			<div class="display-flex flex-justify-center" style="margin-top: var(--spacing);">
+  				<a href="#article2" style="font-weight: bold; color: var(--color-black);"> Buy Now For More Discounts</a>
+			</div>
 		</article>
 		<article id="article4" class="article">
-			<h2>Article 4</h2>
+			<h2>Newsletters</h2>
 			<div class="article-body">
 				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam nemo ipsa omnis laudantium quas enim nulla maxime ex, ullam quia molestiae rerum quod eum corrupti delectus obcaecati sint corporis? Commodi pariatur qui perspiciatis, molestiae quae neque blanditiis. Ullam, dolorem, hic!</p>
 				<p>Accusantium ad reiciendis delectus corporis commodi dolorum placeat error exercitationem voluptatem enim rerum reprehenderit quae itaque ea blanditiis doloremque suscipit, laudantium porro vero. Consequatur culpa, cupiditate eius, eum quae ullam, itaque voluptatum, fugit optio consectetur explicabo saepe magni doloribus. Aperiam.</p>
