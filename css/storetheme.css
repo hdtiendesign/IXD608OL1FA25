@@ -2,12 +2,33 @@
 :root{
 	--color-offwhite: #f4f4f4;
 
+  --color-neutral-light: #ffffff;
+  --color-neutral-medium: #CFCFCF;
+  --color-neutral-dark: #333333;
+
   --color-main-light: #FFE6E2;
   --color-main-medium: #FC6C5F;
   --color-main-dark: #B23D33;
+
+  --color-black: #000;
+  --color-white: #fff;
 }
 body{
 	background-color:var(--color-offwhite) ;
+  padding-bottom: 4em;
+}
+
+
+.favorite label{
+  transition: all 0.3s;
+  display: inline-block;
+  transform: scale(1,1);
+  color: var(--color-neutral-medium);
+}
+
+.favorite input:checked + label{
+  color:red;
+  transform: scale(1.5,1.5);
 }
 
 .product-grid{
