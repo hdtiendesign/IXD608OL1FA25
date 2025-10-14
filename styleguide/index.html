@@ -44,6 +44,7 @@
 						<li><a href="#headings">Headings</a></li>
 						<li><a href="#paragraphs">Paragraphs</a></li>
 					</ul>
+					<li><a href="#brand-colors">Brand Colors</a></li>
 					<li><a href="#cards">Cards</a></li>
 					<li><a href="#viewwindow">View Window</a></li>
 					<li><a href="#navigations">Navigations</a></li>
@@ -83,8 +84,63 @@
 		</div>
 	</div>
 
+	<div class="container" id="brand-colors">
+  		<h2>Brand Colors</h2>
+  		<div class="grid gap">
+   			 <div class="col-xs-12 col-md-6">
+      			<div class="color-swatch">
+       			<div class="chip" style="background:#FFFFFF;"></div>
+        		<div class="meta"><strong>White</strong><div>#FFFFFF</div></div>
+     </div>
+    	</div>
+    		<div class="col-xs-12 col-md-6">
+      			<div class="color-swatch">
+        		<div class="chip" style="background:#FFE6E2;"></div>
+        		<div class="meta"><strong>Main Light</strong><div>#FFE6E2</div></div>
+      	</div>
+    </div>
+    <div class="col-xs-12 col-md-6">
+      	<div class="color-swatch">
+        	<div class="chip" style="background:#FC6C5F;"></div>
+        	<div class="meta"><strong>Main Medium</strong><div>#FC6C5F</div></div>
+      </div>
+    </div>
+    <div class="col-xs-12 col-md-6">
+      	<div class="color-swatch">
+        	<div class="chip" style="background:#B23D33;"></div>
+        	<div class="meta"><strong>Main Dark</strong><div>#B23D33</div></div>
+      </div>
+    </div>
+    	<div class="col-xs-12 col-md-6">
+      		<div class="color-swatch">
+        		<div class="chip" style="background:#E3F8F6;"></div>
+        		<div class="meta"><strong>Sub Light</strong><div>#E3F8F6</div></div>
+      </div>
+    </div>
+    <div class="col-xs-12 col-md-6">
+      	<div class="color-swatch">
+        	<div class="chip" style="background:#3CCFCF;"></div>
+        		<div class="meta"><strong>Sub Medium</strong><div>#3CCFCF</div></div>
+      </div>
+    </div>
+    <div class="col-xs-12 col-md-6">
+      	<div class="color-swatch">
+        	<div class="chip" style="background:#227D7A;"></div>
+        		<div class="meta"><strong>Sub Dark</strong><div>#227D7A</div></div>
+      </div>
+    </div>
+    <div class="col-xs-12 col-md-6">
+      <div class="color-swatch">
+        <div class="chip" style="background:#333333;"></div>
+        <div class="meta"><strong>Neutral Dark</strong><div>#333333</div></div>
+      </div>
+    </div>
+  </div>
+</div>
 
-	<div class="container">
+
+
+	<div class="container" id="cards">
 		<h2>Cards</h2>
 
 		<div class="grid gap">
@@ -110,8 +166,10 @@
 	</div>
 
 
-	<div class="container">
+	<div class="container" id="viewwindow">
 		<h2>View Window</h2>
+		<div class="view-window" style="background-image:url('../img/pokemon.png');"></div>
+
 	</div>
 
 
@@ -189,46 +247,120 @@
 	</div>
 
 
-	<div class="container">
+	<div class="container" id="gridsystem">
 		<h2>Grid System</h2>
-	</div>
+		<div class="card">
+		  <div class="grid gap">
+		    <div class="col-xs-12 col-md-4">
+		      <figure class="figure product">
+		        <img src="../img/eevee.jpg" alt="eevee">
+		        <figcaption>
+		          <div class="caption-top">
+		            <div class="name">Eevee Plush 10"</div>
+		            <div class="favorite fav">
+		              <input type="checkbox" id="fav-grid-1" class="hidden">
+		              <label for="fav-grid-1">&hearts;</label>
+		            </div>
+		          </div>
+		          <div class="caption-bottom">
+		            <div class="price">$19.99</div>
+		            <a href="#" class="form-button sm">Add to Cart</a>
+		          </div>
+		        </figcaption>
+		      </figure>
+		    </div>
+
+		    <div class="col-xs-12 col-md-4">
+		      <figure class="figure product">
+		        <img src="../img/espeon.jpg" alt="espeon">
+		        <figcaption>
+		          <div class="caption-top">
+		            <div class="name">Espeon Plush 10"</div>
+		            <div class="favorite fav">
+		              <input type="checkbox" id="fav-grid-2" class="hidden">
+		              <label for="fav-grid-2">&hearts;</label>
+		            </div>
+		          </div>
+		          <div class="caption-bottom">
+		            <div class="price">$19.99</div>
+		            <a href="#" class="form-button sm">Add to Cart</a>
+		          </div>
+		        </figcaption>
+		      </figure>
+		    </div>
+
+		    <div class="col-xs-12 col-md-4">
+		      <figure class="figure product">
+		        <img src="../img/umbreon.jpg" alt="umbreon">
+		        <figcaption>
+		          <div class="caption-top">
+		            <div class="name">Umbreon Plush 10"</div>
+		            <div class="favorite fav">
+		              <input type="checkbox" id="fav-grid-3" class="hidden">
+		              <label for="fav-grid-3">&hearts;</label>
+		            </div>
+		          </div>
+		          <div class="caption-bottom">
+		            <div class="price">$19.99</div>
+		            <a href="#" class="form-button sm">Add to Cart</a>
+		          </div>
+		        </figcaption>
+		      </figure>
+		    </div>
+		  </div>
+		</div>
 
 
 
-
-	<div class="container">
+	<div class="container" id="flexsystem">
 		<h2>Flex System</h2>
-	</div>
+		<div class="card">
+		  <div class="display-flex flex-align-center" style="gap:1em;">
+		    <img src="../img/eevee.jpg" alt="eevee" class="media-image flex-none" style="width:120px;">
+		    <div class="flex-stretch">
+		      <h4 style="margin:0;">Eevee Plush 10"</h4>
+		      <p style="margin:0;">$19.99</p>
+		    </div>
+		    <div class="flex-none">
+		      <a href="#" class="form-button sm">Add to Cart</a>
+		    </div>
+		  </div>
+		</div>
+
+		<div class="card">
+		  <div class="display-flex flex-align-center flex-justify-center" style="height:140px;">
+		    <div>Centered with flex-align-center + flex-justify-center</div>
+		  </div>
+		</div>	
 
 
 
 	<script>
 	const makeTable = (classes='') => {
-		const head = ['ID', 'Office', 'Name', 'Email', 'Phone'];
-		const body = [
-			['522', "Hamilton Cline", 'hcline@academyart.edu', '555-2424'],
-			['512', "Fred McHale", 'fmchale@academyart.edu', '555-2424'],
-			['522', "Michael Catanzaro", 'mcatanzaro@academyart.edu', '555-2424'],
-			['514', "Andrea Pimentel", 'apimentel@academyart.edu', '555-2424'],
-			['516', "DC Scarpelli", 'dscarpelli@academyart.edu', '555-2424'],
-		];
+	  const head = ['SKU','Product','Category','Price','Stock'];
+	  const body = [
+	    ['EEV','Eevee Plush 10"','Plush','$19.99',32],
+	    ['ESP','Espeon Plush 10"','Plush','$19.99',7],
+	    ['UMB','Umbreon Plush 10"','Plush','$19.99',0],
+	    ['JIG','Jigglypuff Plush 8"','Plush','$14.99',18],
+	    ['PCH','Pikachu Card','Trading Card Game','$7.99',54],
+	  ];
 
-		// Let ran = Math.floor(Math.random()*Links.Length);
-		document.write(`
-			<table class="${classes}">
-				<thead><tr>${head.reduce((r,o)=>r+`<th>${o}</th>`,'')}</thead>
-				<tbody>${body.reduce((r,o,i)=>r+
-					`<tr>${
-						[i+1,...o].reduce((r,o)=>r+`<td>${o}</td>`,'')
-						}</tr>`,'')
-					}</tbody>
-				</table>
-			`);
+	  document.write(`
+	    <table class="${classes}">
+	      <thead>
+	        <tr>${head.map(h=>`<th scope="col">${h}</th>`).join('')}</tr>
+	      </thead>
+	      <tbody>
+	        ${body.map(row => `<tr>${row.map(cell => `<td>${cell}</td>`).join('')}</tr>`).join('')}
+	      </tbody>
+	    </table>
+	  `);
 	}
 	</script>
 
 
-	<div class="container">
+	<div class="container" id="tables">
 		<h2>Tables</h2>
 
 		<div class="card soft">
@@ -272,8 +404,8 @@
 		<h3>Basic Figure</h3>
 
 		<figure class="figure">
-			<img src="https://placehold.co/400" alt="">
-			<figcaption>Product</figcaption>
+			<img src="../img/eevee.jpg" alt="eevee">
+			<figcaption><div class="name">Eevee Plush 10"</div></figcaption>
 		</figure>
 	</div>
 
@@ -282,20 +414,20 @@
 		<div class="grid gap">
 			<div class="col-xs-12 col-md-4">
 				<figure class="figure">
-					<img src="https://placehold.co/400" alt="">
-					<figcaption>Product</figcaption>
+					<img src="../img/eevee.jpg" alt="eevee">
+					<figcaption><div class="name">Eevee Plush 10"</div></figcaption>
 				</figure>
 			</div>
 			<div class="col-xs-12 col-md-4">
 				<figure class="figure">
-					<img src="https://placehold.co/400" alt="">
-					<figcaption>Product</figcaption>
+					<img src="../img/espeon.jpg" alt="espeon">
+					<figcaption><div class="name">Espeon Plush 10"</div></figcaption>
 				</figure>
 			</div>
 			<div class="col-xs-12 col-md-4">
 				<figure class="figure">
-					<img src="https://placehold.co/400" alt="">
-					<figcaption>Product</figcaption>
+					<img src="../img/umbreon.jpg" alt="umbreon">
+					<figcaption><div class="name">Umbreon Plush 10"</div></figcaption>
 				</figure>
 			</div>
 		</div>
@@ -303,67 +435,96 @@
 		<h3>Product Grid</h3>
 
 		<div class="grid gap">
+		<div class="col-xs-12 col-md-4">
+		<figure class="figure product">
+  			<img src="../img/eevee.jpg" alt="eevee">
+  		<figcaption>
+    		<div class="caption-top">
+      		<div class="name">Eevee Plush 10"</div>
+      		<div class="favorite fav">
+        		<input type="checkbox" id="fav-eevee" class="hidden">
+        		<label for="fav-eevee">&hearts;</label>
+      		</div>
+    	</div>
+    		<div class="caption-bottom">
+      		<div class="price">$19.99</div>
+      		<a href="#" class="form-button sm">Add to Cart</a>
+    	</div>
+  	</figcaption>
+	</figure>
+</div>
+
 			<div class="col-xs-12 col-md-4">
 				<figure class="figure product">
-					<img src="https://placehold.co/400" alt="">
-					<figcaption>
-						<div>Product Name</div>
-						<div>$3.99</div>
-					</figcaption>
-				</figure>
-			</div>
+  			<img src="../img/espeon.jpg" alt="espeon">
+  		<figcaption>
+    		<div class="caption-top">
+      		<div class="name">Espeon Plush 10"</div>
+      		<div class="favorite fav">
+        		<input type="checkbox" id="fav-espeon" class="hidden">
+        		<label for="fav-espeon">&hearts;</label>
+      		</div>
+    	</div>
+    		<div class="caption-bottom">
+      		<div class="price">$19.99</div>
+      		<a href="#" class="form-button sm">Add to Cart</a>
+    	</div>
+  	</figcaption>
+	</figure>
+</div>
+
 			<div class="col-xs-12 col-md-4">
 				<figure class="figure product">
-					<img src="https://placehold.co/400" alt="">
-					<figcaption>
-						<div>Product Name</div>
-						<div>$3.99</div>
-					</figcaption>
-				</figure>
-			</div>
-			<div class="col-xs-12 col-md-4">
-				<figure class="figure product">
-					<img src="https://placehold.co/400" alt="">
-					<figcaption>
-						<div>Product Name</div>
-						<div>$3.99</div>
-					</figcaption>
-				</figure>
-			</div>
-		</div>
+  			<img src="../img/umbreon.jpg" alt="umbreon">
+  		<figcaption>
+    		<div class="caption-top">
+      		<div class="name">Umbreon Plush 10"</div>
+      		<div class="favorite fav">
+        		<input type="checkbox" id="fav-umbreon" class="hidden">
+        		<label for="fav-umbreon">&hearts;</label>
+      		</div>
+    	</div>
+    		<div class="caption-bottom">
+      		<div class="price">$19.99</div>
+      		<a href="#" class="form-button sm">Add to Cart</a>
+    	</div>
+  		</figcaption>
+		</figure>
+	</div>
+	</div>
 
 		<h3>Product Overlay</h3>
 
 		<div class="grid gap">
 			<div class="col-xs-12 col-md-4">
 				<figure class="figure product-overlay">
-					<img src="https://placehold.co/400" alt="">
+					<img src="../img/eevee.jpg" alt="eevee">
 					<figcaption>
 						<div class="caption-body">
-							<div>Product Name</div>
-							<div>$3.99</div>
+							<div class="name">Eevee Plush 10"</div>
+							 <div class="price">$19.99</div>
 						</div>
 					</figcaption>
 				</figure>
 			</div>
 			<div class="col-xs-12 col-md-4">
 				<figure class="figure product-overlay">
-					<img src="https://placehold.co/400" alt="">
+					<img src="../img/espeon.jpg" alt="espeon">
 					<figcaption>
 						<div class="caption-body">
-							<div>Product Name</div>
-							<div>$3.99</div>
+							<div class="name">Espeon Plush 10"</div>
+							<div class="price">$19.99</div>
 						</div>
 					</figcaption>
 				</figure>
 			</div>
 			<div class="col-xs-12 col-md-4">
 				<figure class="figure product-overlay">
-					<img src="https://placehold.co/400" alt="">
+					<img src="../img/umbreon.jpg" alt="umbreon">
 					<figcaption>
 						<div class="caption-body">
-							<div>Product Name</div>
-							<div>$3.99</div>
+							<div class="name">Umbreon Plush 10"</div>
+							<div class="price">$19.99</div>
 						</div>
 					</figcaption>
 				</figure>
@@ -378,7 +539,7 @@
 		<h3>Inputs</h3>
 
 		<div class="card soft">
-			<h3>Default Inputs</h3>
+			<h3 id="inputs">Default Inputs</h3>
 			<form>
 				<input type="text"><br>
 				<input type="number"><br>
@@ -398,7 +559,7 @@
 				<input type="search" placeholder="Search" class="form-input"><br>
 			</form>
 
-			<h3>Form Label</h3>
+			<h3 id="labels">Form Label</h3>
 			<form>
 				<label class="form-label">Example</label>
 				<input type="text" placeholder="Text" class="form-input">
@@ -410,7 +571,7 @@
 				<input type="search" placeholder="Search" class="form-input"><br>
 			</form>
 
-			<h3>Form Control</h3>
+			<h3 id="controls">Form Control</h3>
 			<form>
 				<div class="form-control">
 					<label class="form-label">Example</label>
@@ -448,7 +609,7 @@
 
 		<button>Button</button>
 
-		<h3>Form Buttons</h3>
+		<h3 id="buttons">Form Buttons</h3>
 		
 		<div class="form-control">
 			<button type="button" class="form-button">Button</button>

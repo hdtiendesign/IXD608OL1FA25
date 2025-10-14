@@ -94,19 +94,34 @@ a:hover{
 }
 
 .nav a{
-	display: block;
-	padding: 0.2em 0.5em;
+  	display: block;
+  	padding: 0.2em 0.5em;
+  	border-radius: 0.5em;
+  	transition: background-color 0.15s ease, color 0.15s ease;
+  	color: inherit;
+  	text-decoration: none;
 }
 
 .nav a:hover{
-	background-color: var(--color-main-medium);
-	color: var(--color-white);
-	text-decoration: none;
+  	background-color: var(--color-main-light);
+  	color: var(--color-neutral-dark);
+  	text-decoration: none;
+}
+
+.nav a:active{
+  	background-color: var(--color-main-dark);
+  	color: var(--color-white);
 }
 
 .nav .active a{
-	background-color: var(--color-main-light);
-	color: inherit;
+  	background-color: var(--color-main-medium);
+  	color: var(--color-white);
+}
+
+.nav .active a:hover,
+.nav .active a:active{
+  	background-color: var(--color-main-medium);
+  	color: var(--color-white);
 }
 
 .nav-material ul,
@@ -196,36 +211,44 @@ a:hover{
 /*CARD*/
 
 .card{
-	background-color:var(--color-white) ;
-	margin-top: 1em;
-	margin-bottom: 1em;
-	padding: 1em;
-
-	overflow: hidden;
-	position: relative;
+  background-color: var(--color-white);
+  margin-top: 1em;
+  margin-bottom: 1em;
+  padding: 1em;
+  border: 1px solid rgba(0,0,0,0.04);
+  border-radius: 0.5em;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+  overflow: hidden;
+  position: relative;
 }
 
 .card.soft{
-	border-radius: 0.5em;
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 0.75em;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
 }
 
 .card.hard{
-	border-radius: 0.2em;
-	border:2px solid var(--color-neutral-medium);
+  border-radius: 0.4em;
+  border: 2px solid var(--color-neutral-medium);
+  box-shadow: none;
 }
 
 .card.dark{
-	background-color: var(--color-main-dark);
-	color: var(--color-main-light);
+  background-color: var(--color-main-dark);
+  color: var(--color-main-light);
+  border: 0;
 }
 
 .card.medium{
-	background-color: var(--color-main-medium);
+  background-color: var(--color-main-light);
+  color: var(--color-neutral-dark);
+  border: 1px solid rgba(0,0,0,0.05);
 }
 
 .card.flat{
-	padding:0;
+  padding: 0;
+  border-radius: 0.5em;
+  overflow: hidden;
 }
 
 .view-window{
@@ -251,8 +274,12 @@ a:hover{
 	padding: 0.2em 0.5em;
 }
 
-.table.striped tbody tr:nth-child(odd) {
-	background-color: var(--color-neutral-light);
+.table.striped tbody tr:nth-child(odd) { 
+	background-color: var(--color-main-light); 
+}
+
+.table.striped tbody tr:nth-child(even) { 
+	background-color: var(--color-neutral-light); 
 }
 
 .table.lined.all th:not(:first-child),
@@ -328,23 +355,43 @@ a:hover{
 	width: 100%;
 }
 
-.form-button{
-	background-color: var(--color-main-light);
-	border-radius: 0.2em;
-	cursor: pointer;
-	text-align: center;
-	padding: 0.5em 1em;
-
+button,
+.form-button,
+.form-control .form-button {
+  	display: inline-flex;
+  	align-items: center;
+  	justify-content: center;
+  	background-color: var(--color-white);
+  	color: var(--color-main-medium);                   
+  	border: 1.5px solid var(--color-main-medium);       
+  	border-radius: 0.5em;
+  	padding: 0.6em 1em;
+  	font-weight: 600;
+  	text-decoration: none;
+  	cursor: pointer;
+	transition: 0.3s;
 }
 
-.form-button:hover{
-	text-decoration: none;
-	background-color: var(--color-main-medium);
+button:hover,
+.form-button:hover {
+  	background-color: var(--color-main-medium);           
+  	color: var(--color-white);                          
+  	border-color: var(--color-main-medium);
+  	transform: translateY(-1px);
+  	box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+  	text-decoration: none;
 }
 
-.form-button:active{
-	background-color: var(--color-main-medium);
+button:active,
+.form-button:active {
+  	background-color: var(--color-main-dark);            
+  	color: var(--color-white);
+  	border-color: var(--color-main-dark);
+  	transform: translateY(0);
+  	box-shadow: 0 2px 6px rgba(0,0,0,0.10);
 }
+
+
 
 .hotdog{
 	background-color: var(--color-main-light);
@@ -394,8 +441,8 @@ a:hover{
 	display: inline-block;
 	width: 2em;
 	height: 1em;
-	border: 0.1em solid var(--color-main-light);
-	background-color: var(--color-main-light);
+	border: 0.1em solid var(--color-neutral-medium);
+	background-color: var(--color-neutral-medium);
 	border-radius: 1em;
 	position: relative;
 }
@@ -407,11 +454,82 @@ a:hover{
 	height: 0.8em;
 	border-radius: 1em;
 	position: absolute;
-	background-color: var(--color-main-medium);
+	background-color: var(--color-white);
 	transition: all 0.3s;
+}
+
+.toggle input:checked + label{
+  background-color: var(--color-main-medium);
+  border-color: var(--color-main-medium);
 }
 
 .toggle input:checked + label::after{
 	transform: translateX(1em);
 }
 
+
+/* Color swatches */
+
+.color-swatch {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 0.75em;
+  align-items: center;
+  border: 1px solid var(--color-neutral-medium);
+  border-radius: 0.5em;
+  padding: 0.75em;
+  background: var(--color-white);
+}
+.color-swatch .chip {
+  height: 64px;
+  border-radius: 0.5em;
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,0.06);
+}
+.color-swatch .meta {
+  display: grid;
+  gap: 0.2em;
+  font-size: 0.9em;
+}
+
+
+.figure.product{
+  position: relative;
+  border-radius: 0.5em;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  overflow: hidden;
+}
+
+.figure.product .fav{ position: static; }
+
+
+.figure .name { font-weight: 700; font-size: 1.05rem; }
+
+.figure .price { font-weight: 700; color: var(--color-main-dark); }
+
+.form-button.sm{
+  padding: 0.45em 0.8em;
+  border-radius: 0.4em;
+  font-weight: 600;
+}
+
+.figure.product figcaption{
+  background: var(--color-neutral-light);
+  border-top: 1px solid var(--color-neutral-medium);
+  padding: 0.75em 1em;
+  display: grid;
+  gap: 0.5em;
+}
+
+.figure.product .caption-top{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5em;
+}
+
+.figure.product .caption-bottom{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5em;
+}
