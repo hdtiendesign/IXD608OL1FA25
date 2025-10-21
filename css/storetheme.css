@@ -135,3 +135,33 @@ body{
     padding: 0;
   }
 }
+
+
+.about-card{
+    background-color: var(--color-main-medium);
+    color: var(--color-white);
+    padding: 5em 2em;
+}
+
+.learn-more {
+    background-color: var(--color-white);
+    color: var(--color-main-medium);
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.learn-more:hover,
+.learn-more:focus,
+.learn-more:active {
+    background-color: var(--color-white);
+    color: var(--color-main-medium);
+    transform: none;
+    box-shadow: none;
+}
+
+
+.brand-title {
+    color: var(--color-main-medium);
+    margin-bottom: 0.75em;
+}
