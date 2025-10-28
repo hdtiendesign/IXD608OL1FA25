@@ -1,0 +1,32 @@
+[
+	{
+		"name": "Hoang Dieu Tien Tran",
+		"type": "Student",
+		"email": "htran23@art.edu",
+		"classes": [608, 705]
+	},
+	{
+    	"name": "Ariana Nguyen",
+    	"type": "Student",
+    	"email": "anguyen27@art.edu",
+    	"classes": [608, 612]
+  	},
+  	{
+    	"name": "Miguel Santos",
+    	"type": "Student",
+    	"email": "msantos19@art.edu",
+    	"classes": [705, 722]
+  	},
+  	{
+    	"name": "Lucy Park",
+    	"type": "Student",
+    	"email": "lpark31@art.edu",
+    	"classes": [608, 705, 718]
+  	},
+  	{
+    	"name": "Noah Patel",
+    	"type": "Student",
+    	"email": "npatel08@art.edu",
+    	"classes": [601, 705]
+  	}
+]
