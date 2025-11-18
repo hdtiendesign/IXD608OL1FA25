@@ -1,3 +1,9 @@
+<?php
+
+include_once "lib/php/function.php";
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,7 +24,6 @@
     </div>
   </div>
 
-
   <div class="container" style="margin-top:3em;">
     <h1 class="text-center brand-title">Featured Products</h1>
     <div class="grid gap">
@@ -35,9 +40,27 @@
                 <label for="fav-eevee">&hearts;</label>
               </div>
             </div>
+
             <div class="caption-bottom">
               <div class="price">$19.99</div>
-              <a href="#" class="form-button sm">Add to Cart</a>
+
+              <form action="cart_actions.php?action=add-to-cart" method="post" style="margin:0;">
+                <input type="hidden" name="product-id" value="1">
+                <input type="hidden" name="product-color" value="">
+
+                <div class="form-select">
+                  <select name="product-amount">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                  </select>
+                </div>
+
+                <button class="form-button">Add to Cart</button>
+              </form>
+
             </div>
           </figcaption>
         </figure>
@@ -55,9 +78,27 @@
                 <label for="fav-espeon">&hearts;</label>
               </div>
             </div>
+
             <div class="caption-bottom">
               <div class="price">$19.99</div>
-              <a href="#" class="form-button sm">Add to Cart</a>
+
+              <form action="cart_actions.php?action=add-to-cart" method="post" style="margin:0;">
+                <input type="hidden" name="product-id" value="2">
+                <input type="hidden" name="product-color" value="">
+
+                <div class="form-select">
+                  <select name="product-amount">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                  </select>
+                </div>
+
+                <button class="form-button">Add to Cart</button>
+              </form>
+
             </div>
           </figcaption>
         </figure>
@@ -75,9 +116,27 @@
                 <label for="fav-umbreon">&hearts;</label>
               </div>
             </div>
+
             <div class="caption-bottom">
               <div class="price">$19.99</div>
-              <a href="#" class="form-button sm">Add to Cart</a>
+
+              <form action="cart_actions.php?action=add-to-cart" method="post" style="margin:0;">
+                <input type="hidden" name="product-id" value="3">
+                <input type="hidden" name="product-color" value="">
+
+                <div class="form-select">
+                  <select name="product-amount">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                  </select>
+                </div>
+
+                <button class="form-button">Add to Cart</button>
+              </form>
+
             </div>
           </figcaption>
         </figure>
@@ -95,35 +154,55 @@
                 <label for="fav-vaporeon">&hearts;</label>
               </div>
             </div>
+
             <div class="caption-bottom">
               <div class="price">$19.99</div>
-              <a href="#" class="form-button sm">Add to Cart</a>
+
+              <form action="cart_actions.php?action=add-to-cart" method="post" style="margin:0;">
+                <input type="hidden" name="product-id" value="5">
+                <input type="hidden" name="product-color" value="">
+
+                <div class="form-select">
+                  <select name="product-amount">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                  </select>
+                </div>
+
+                <button class="form-button">Add to Cart</button>
+              </form>
+
             </div>
           </figcaption>
         </figure>
       </div>
 
-    </div>
-  </div>
+    </div> 
+  </div> 
 
+  <div class="container" style="padding:4em 0;">
+    <div class="about-card grid gap">
 
-  <div class="container" style="margin-top:4em;">
-    <div class="card about-card">
-      <div class="grid gap md-medium flex-align-center">
-        <div class="col-xs-12 col-md-6">
-          <h1 class="about-title">About PokéArchive</h1>
-          <p>
-            PokéArchive is a fun and welcoming online store for all Pokémon fans.
-            We offer a collection of plushies, cards, and collectibles that bring
-            joy to fans and collectors alike. Whether you are just starting or expanding
-            your collection, you will find something here that sparks nostalgia and excitement.
-          </p>
-          <a href="about.php" class="form-button sm learn-more">Learn More</a>
-        </div>
-        <div class="col-xs-12 col-md-6">
-          <img src="img/pokemon_tcg.png" alt="About PokéArchive" class="media-image" style="border-radius:0.3em;">
-        </div>
+      <div class="col-xs-12 col-md-6 about-left">
+        <h2>About PokéArchive</h2>
+        <p>
+          PokéArchive is a space dedicated to fans who love collecting,
+          discovering, and celebrating Pokémon items. From plushies to cards
+          and more, our goal is to bring joy to fans and collectors alike.
+          Whether you are just starting or expanding your collection, you
+          will find something here that sparks nostalgia and excitement.
+        </p>
+
+        <a href="about.php" class="about-btn">Learn More</a>
       </div>
+
+      <div class="col-xs-12 col-md-6 about-right">
+        <img src="img/pokemon_tcg.png" alt="About PokéArchive" class="about-image">
+      </div>
+
     </div>
   </div>
 

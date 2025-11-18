@@ -344,6 +344,10 @@ a:hover{
 
 }
 
+.form-button:inline{
+	width: initial;
+}
+
 .form-input:focus{
 	border-bottom-color: var(--color-main-medium);
 }
@@ -532,4 +536,55 @@ button:active,
   flex-direction: column;
   align-items: flex-start;
   gap: 0.5em;
+}
+
+.about-card {
+  background: var(--color-main-light);
+  padding: 2em;
+  border-radius: 0.4em;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-left h2 {
+  margin-top: 0;
+}
+
+.about-left p {
+  margin: 1em 0 1.5em;
+  line-height: 1.6em;
+}
+
+.about-image {
+  width: 100%;
+  max-width: 380px;
+  border-radius: 0.3em;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.about-btn {
+  display: inline-block;
+  background: white;
+  color: red;
+  padding: 0.6em 1.2em;
+  border-radius: 0.25em;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 0.5em;
+}
+
+@media (min-width: 768px) {
+  .about-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .about-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
