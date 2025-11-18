@@ -1,21 +1,21 @@
 :root{
   --color-offwhite: #f4f4f4;
 
-    --color-neutral-light: #ffffff;
-    --color-neutral-medium: #CFCFCF;
-    --color-neutral-dark: #333333;
+  --color-neutral-light: #ffffff;
+  --color-neutral-medium: #CFCFCF;
+  --color-neutral-dark: #333333;
 
-    --color-main-light: #FFE6E2;
-    --color-main-medium: #FC6C5F;
-    --color-main-dark: #B23D33;
+  --color-main-light: #FFE6E2;
+  --color-main-medium: #FC6C5F;
+  --color-main-dark: #B23D33;
 
-    --color-black: #000;
-    --color-white: #fff;
+  --color-black: #000;
+  --color-white: #fff;
 }
 
 body{
   background-color:var(--color-offwhite);
-    padding-bottom: 4em;
+  padding-bottom: 4em;
 }
 
 
@@ -78,6 +78,8 @@ body{
     overflow: hidden;
 }
 
+
+/* OVERLAY PRODUCT */
 .product-overlay{
     position: relative;
     overflow: hidden;
@@ -122,15 +124,11 @@ body{
     transform: scale(1.4,1.4);
 }
 
-
 @media (max-width: 600px) {
     .product-overlay figcaption {
       position: relative;
       display: block;
-      top: initial;
-      left: initial;
       width: 100%;
-      height: initial;
       opacity: 1;
       background-color: initial;
     }
@@ -171,12 +169,12 @@ body{
 }
 
 
-/* FIX PRODUCT HEIGHT ALIGN */
-.grid.gap > [class*="col-"] {
+
+.store-page .grid.gap > [class*="col-"] {
     display: flex;
 }
 
-.grid.gap > [class*="col-"] > .figure.product {
+.store-page .grid.gap > [class*="col-"] > .figure.product {
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -184,7 +182,7 @@ body{
     height: 100%;
 }
 
-.product-info {
+.store-page .product-info {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -200,27 +198,24 @@ span.badge::before{
     content: '(';
 }
 
-/* Make dropdown short and clean */
-.form-select {
+
+.store-page .form-select {
     display: inline-block;
-    width: 90px;                 
-    margin-bottom: 0.8em;        
+    width: 90px;
+    margin-bottom: 0.8em;
     position: relative;
 }
 
-.form-select select {
+.store-page .form-select select {
     width: 100%;
 }
 
-/* FIX the dropdown arrow alignment */
-.form-select::after {
+.store-page .form-select::after {
     right: 0.5em;
     font-size: 0.85em;
 }
 
-
-/* Make add-to-cart button full width */
-.product .form-button {
+.store-page .product .form-button {
     width: 100% !important;
     display: block !important;
     text-align: center;

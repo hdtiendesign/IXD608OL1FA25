@@ -8,7 +8,7 @@
 
 </head>
 <body>
-
+  
   <?php include "parts/navbar.php"; ?>
 
   <div class="container" style="padding:3em 0;">

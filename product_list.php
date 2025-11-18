@@ -6,7 +6,7 @@
   <title>Product List</title>
   <?php include "parts/meta.php"; ?>
 </head>
-<body>
+<body class="store-page">
 
   <?php include "parts/navbar.php"; ?>
 

@@ -19,7 +19,7 @@ $cart_item = cartItemById($id);
     <title>Added to Cart</title>
     <?php include "parts/meta.php"; ?>
 </head>
-<body>
+<body class="store-page">
 
 <?php include "parts/navbar.php"; ?>
 

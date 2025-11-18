@@ -9,7 +9,7 @@ $product = makeQuery(makeConn(),"SELECT * FROM `products` WHERE `id`=".$_GET['id
     <title><?= $product->name ?></title>
     <?php include "parts/meta.php"; ?>
 </head>
-<body>
+<body class="store-page">
 
 <?php include "parts/navbar.php"; ?>
 
