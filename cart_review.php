@@ -22,23 +22,14 @@ $cart_items = getCartItems();
 
     <?php if(count($cart_items)): ?>
 
-      <!-- Cart Items -->
       <div>
         <?php
           echo array_reduce($cart_items, "cartListTemplate");
         ?>
       </div>
 
-      <!-- Totals Section -->
       <div style="margin-top:2em;">
         <?= cartTotals() ?>
-      </div>
-
-      <!-- Checkout Button -->
-      <div style="text-align:right; margin-top:1.5em;">
-        <a href="cart_checkout.php" class="form-button" style="padding:0.7em 1.3em;">
-          Proceed to Checkout
-        </a>
       </div>
 
     <?php else: ?>

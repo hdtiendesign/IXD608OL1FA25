@@ -2,6 +2,7 @@
 include_once "lib/php/function.php";
 
 $id = isset($_GET['id']) ? $_GET['id'] : 0;
+$condition = isset($_GET['condition']) ? $_GET['condition'] : "";
 
 $product = makeQuery(
     makeConn(),
@@ -10,8 +11,15 @@ $product = makeQuery(
 
 $product = count($product) ? $product[0] : null;
 
-$cart_item = cartItemById($id);
+$cart = getCart();
+$cart_item = null;
 
+foreach($cart as $item) {
+    if($item->id == $id && $item->condition == $condition) {
+        $cart_item = $item;
+        break;
+    }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -30,7 +38,10 @@ $cart_item = cartItemById($id);
             <h2>You added <?= $product->name ?> to your cart.</h2>
 
             <?php if($cart_item): ?>
-                <p>There are now <?= $cart_item->amount ?> of this item in your cart.</p>
+                <p>
+                    Condition: <strong><?= $cart_item->condition ?></strong><br>
+                    Quantity in cart: <strong><?= $cart_item->amount ?></strong>
+                </p>
             <?php endif; ?>
 
             <div class="display-flex" style="margin-top:2em;">

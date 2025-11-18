@@ -1,5 +1,3 @@
-<?php ini_set('display_errors', 1); error_reporting(E_ALL); ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,33 +6,27 @@
 </head>
 <body class="store-page">
 
-  <?php include "parts/navbar.php"; ?>
+<?php include "parts/navbar.php"; ?>
 
-  <div class="container">
-    <div class="card soft">
-      <h2>Product List</h2>
+<div class="container">
+  <div class="card soft">
+    <h2>Product List</h2>
 
-      <?php
-      include_once "lib/php/function.php";
-      include_once "parts/templates.php";
+    <?php
+    include_once "lib/php/function.php";
+    include_once "parts/templates.php";
 
-      $result = makeQuery(
-        makeConn(),
-        "
-        SELECT * 
-        FROM `products`
-        ORDER BY `date_create` DESC
-        LIMIT 15
-        "
-      );
+    $result = makeQuery(
+      makeConn(),
+      "SELECT * FROM `products` ORDER BY `date_create` DESC LIMIT 15"
+    );
 
-      echo "<div class='grid gap'>";
-      echo array_reduce($result, 'productListTemplate');
-      echo "</div>";
-      ?>
-
-    </div>
+    echo "<div class='grid gap'>";
+    echo array_reduce($result, 'productListTemplate');
+    echo "</div>";
+    ?>
   </div>
+</div>
 
 </body>
 </html>

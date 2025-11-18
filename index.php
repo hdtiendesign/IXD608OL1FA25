@@ -24,6 +24,7 @@ include_once "lib/php/function.php";
     </div>
   </div>
 
+
   <div class="container" style="margin-top:3em;">
     <h1 class="text-center brand-title">Featured Products</h1>
     <div class="grid gap">
@@ -48,7 +49,18 @@ include_once "lib/php/function.php";
                 <input type="hidden" name="product-id" value="1">
                 <input type="hidden" name="product-color" value="">
 
-                <div class="form-select">
+                <!-- Condition -->
+                <div class="form-select" style="margin-bottom:0.4em; max-width:140px;">
+                  <select name="product-condition">
+                    <option value="New">New</option>
+                    <option value="Used - Like New">Used – Like New</option>
+                    <option value="Used - Good">Used – Good</option>
+                    <option value="Used - Fair">Used – Fair</option>
+                  </select>
+                </div>
+
+                <!-- Quantity -->
+                <div class="form-select" style="margin-bottom:0.5em; max-width:120px;">
                   <select name="product-amount">
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -58,7 +70,7 @@ include_once "lib/php/function.php";
                   </select>
                 </div>
 
-                <button class="form-button">Add to Cart</button>
+                <button class="form-button sm">Add to Cart</button>
               </form>
 
             </div>
@@ -86,7 +98,16 @@ include_once "lib/php/function.php";
                 <input type="hidden" name="product-id" value="2">
                 <input type="hidden" name="product-color" value="">
 
-                <div class="form-select">
+                <div class="form-select" style="margin-bottom:0.4em; max-width:140px;">
+                  <select name="product-condition">
+                    <option value="New">New</option>
+                    <option value="Used - Like New">Used – Like New</option>
+                    <option value="Used - Good">Used – Good</option>
+                    <option value="Used - Fair">Used – Fair</option>
+                  </select>
+                </div>
+
+                <div class="form-select" style="margin-bottom:0.5em; max-width:120px;">
                   <select name="product-amount">
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -96,7 +117,7 @@ include_once "lib/php/function.php";
                   </select>
                 </div>
 
-                <button class="form-button">Add to Cart</button>
+                <button class="form-button sm">Add to Cart</button>
               </form>
 
             </div>
@@ -124,7 +145,16 @@ include_once "lib/php/function.php";
                 <input type="hidden" name="product-id" value="3">
                 <input type="hidden" name="product-color" value="">
 
-                <div class="form-select">
+                <div class="form-select" style="margin-bottom:0.4em; max-width:140px;">
+                  <select name="product-condition">
+                    <option value="New">New</option>
+                    <option value="Used - Like New">Used – Like New</option>
+                    <option value="Used - Good">Used – Good</option>
+                    <option value="Used - Fair">Used – Fair</option>
+                  </select>
+                </div>
+
+                <div class="form-select" style="margin-bottom:0.5em; max-width:120px;">
                   <select name="product-amount">
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -134,7 +164,7 @@ include_once "lib/php/function.php";
                   </select>
                 </div>
 
-                <button class="form-button">Add to Cart</button>
+                <button class="form-button sm">Add to Cart</button>
               </form>
 
             </div>
@@ -162,7 +192,16 @@ include_once "lib/php/function.php";
                 <input type="hidden" name="product-id" value="5">
                 <input type="hidden" name="product-color" value="">
 
-                <div class="form-select">
+                <div class="form-select" style="margin-bottom:0.4em; max-width:140px;">
+                  <select name="product-condition">
+                    <option value="New">New</option>
+                    <option value="Used - Like New">Used – Like New</option>
+                    <option value="Used - Good">Used – Good</option>
+                    <option value="Used - Fair">Used – Fair</option>
+                  </select>
+                </div>
+
+                <div class="form-select" style="margin-bottom:0.5em; max-width:120px;">
                   <select name="product-amount">
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -172,7 +211,7 @@ include_once "lib/php/function.php";
                   </select>
                 </div>
 
-                <button class="form-button">Add to Cart</button>
+                <button class="form-button sm">Add to Cart</button>
               </form>
 
             </div>
@@ -182,6 +221,7 @@ include_once "lib/php/function.php";
 
     </div> 
   </div> 
+
 
   <div class="container" style="padding:4em 0;">
     <div class="about-card grid gap">
@@ -205,6 +245,7 @@ include_once "lib/php/function.php";
 
     </div>
   </div>
+
 
 </body>
 </html>

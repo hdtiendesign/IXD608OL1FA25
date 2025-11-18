@@ -22,8 +22,6 @@ function makeConn(){
 }
 
 
-
-
 function makeQuery($conn,$qry){
     $result = $conn->query($qry);
     if($conn->errno) die($conn->error);
@@ -46,23 +44,23 @@ function getCart() {
 }
 
 
-function addToCart($id,$amount,$color) {
+function addToCart($id, $amount, $color = "", $condition = "New") {
     $cart = getCart();
 
-    // Check if item already exists
-    $p = array_find($cart,function($o) use($id) { 
-        return $o->id == $id; 
+    $p = array_find($cart, function($o) use($id, $color, $condition) {
+        return $o->id == $id 
+            && $o->color == $color
+            && $o->condition == $condition;
     });
 
     if($p) {
-        // Update amount
         $p->amount += $amount;
     } else {
-        // Add new item
         $_SESSION['cart'][] = (object)[
             "id" => $id,
             "amount" => $amount,
-            "color" => $color
+            "color" => $color,
+            "condition" => $condition
         ];
     }
 }
@@ -73,7 +71,7 @@ function updateCartItem($id,$amount) {
 
     foreach($cart as $o) {
         if($o->id == $id) {
-            if($amount < 1) $amount = 1; 
+            if($amount < 1) $amount = 1;
             $o->amount = $amount;
         }
     }
@@ -89,7 +87,7 @@ function deleteCartItem($id) {
         return $o->id != $id;
     });
 
-    $_SESSION['cart'] = array_values($cart); 
+    $_SESSION['cart'] = array_values($cart);
 }
 
 
@@ -99,11 +97,10 @@ function resetCart() {
 
 
 function cartItemById($id) {
-    return array_find(getCart(),function($o) use($id){
+    return array_find(getCart(), function($o) use($id){
         return $o->id == $id;
     });
 }
-
 
 
 function makeCartBadge() {
@@ -114,7 +111,6 @@ function makeCartBadge() {
     foreach ($cart as $item) {
         $total += $item->amount;
     }
-
     return $total;
 }
 
@@ -134,9 +130,14 @@ function getCartItems() {
     );
 
     return array_map(function($o) use ($cart) {
-        $p = cartItemById($o->id);
-        $o->amount = $p->amount;
-        $o->total = $p->amount * $o->price;
+        foreach($cart as $c) {
+            if($c->id == $o->id) {
+                $o->amount = $c->amount;
+                $o->color = $c->color;
+                $o->condition = $c->condition;
+                $o->total = $c->amount * $o->price;
+            }
+        }
         return $o;
     }, $data);
 }

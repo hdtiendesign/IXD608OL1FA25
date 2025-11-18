@@ -20,13 +20,22 @@ return $r.<<<HTML
         <div class="caption-bottom">
           <div class="price">\$$o->price</div>
 
-          <!-- Add to Cart -->
-          <form action="cart_actions.php?action=add-to-cart" method="post" style="width:100%;">
-
+          <form action="cart_actions.php?action=add-to-cart" method="post" style="width:100%; margin:0;">
             <input type="hidden" name="product-id" value="$o->id">
             <input type="hidden" name="product-color" value="">
 
-            <div class="form-select" style="width:90px; margin:0;">
+            <!-- Condition dropdown -->
+            <div class="form-select" style="width:100%; margin-bottom:0.6em;">
+              <select name="product-condition">
+                <option value="New">New</option>
+                <option value="Used - Like New">Used – Like New</option>
+                <option value="Used - Good">Used – Good</option>
+                <option value="Used - Fair">Used – Fair</option>
+              </select>
+            </div>
+
+            <!-- Quantity dropdown -->
+            <div class="form-select" style="width:90px; margin-bottom:0.6em;">
               <select name="product-amount">
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -36,9 +45,7 @@ return $r.<<<HTML
               </select>
             </div>
 
-            <button class="form-button sm" style="width:100%; margin-top:0.6em;">
-              Add to Cart
-            </button>
+            <button class="form-button sm">Add to Cart</button>
           </form>
 
         </div>
@@ -50,37 +57,25 @@ HTML;
 
 
 
-function selectAmount($amount=1,$total=10) {
-    $output = "<select name='amount'>";
-    for($i=1;$i<=$total;$i++) {
-        $selected = $i==$amount ? "selected" : "";
-        $output .= "<option value='$i' $selected>$i</option>";
-    }
-    $output .= "</select>";
-    return $output;
-}
-
-
-
 function cartListTemplate($r,$o){
 
-    $totalfixed = number_format($o->total, 2, '.', '');
-
     $options = "";
-    for($i=1; $i<=5; $i++) {
-        $sel = $i == $o->amount ? "selected" : "";
+    for($i=1;$i<=5;$i++){
+        $sel = $i==$o->amount ? "selected" : "";
         $options .= "<option value='$i' $sel>$i</option>";
     }
 
+    $totalfixed = number_format($o->total,2,'.','');
+
 return $r.<<<HTML
 <div class="display-flex card-section" style="align-items:center; gap:1em;">
-
     <div class="flex-none images-thumbs">
         <img src="img/$o->thumbnail" style="width:80px; border-radius:0.3em;">
     </div>
 
     <div class="flex-stretch">
-        <strong>$o->name</strong>
+        <strong>$o->name</strong><br>
+        Condition: <strong>$o->condition</strong>
 
         <form action="cart_actions.php?action=delete-cart-item" method="post" style="margin-top:0.5em;">
             <input type="hidden" name="id" value="$o->id">
@@ -94,12 +89,9 @@ return $r.<<<HTML
         <form action="cart_actions.php?action=update-cart-item" method="post" style="margin-top:0.5em;">
             <input type="hidden" name="id" value="$o->id">
 
-            <div class="form-select" style="width:70px; margin:0;">
-              <select name="amount" onchange="this.form.submit()">
+            <select name="amount" class="form-select" style="max-width:70px;" onchange="this.form.submit()">
                 $options
-              </select>
-            </div>
-
+            </select>
         </form>
     </div>
 
@@ -112,25 +104,19 @@ HTML;
 function cartTotals() {
 
     $cart = getCartItems();
+    if(!count($cart)) return "";
 
-    // subtotal
-    $cartprice = array_reduce($cart, function($r,$o){
-        return $r + $o->total;
-    }, 0);
+    $subtotal = array_reduce($cart, fn($r,$o)=>$r+$o->total, 0);
 
-    $cartfixed = number_format($cartprice, 2, '.', '');
-
-    // tax
-    $tax = number_format($cartfixed * 0.1, 2, '.', '');
-
-    // total
-    $total = number_format($cartfixed + $tax, 2, '.', '');
+    $sub = number_format($subtotal,2,'.','');
+    $tax = number_format($sub * 0.1,2,'.','');
+    $total = number_format($sub + $tax,2,'.','');
 
 return <<<HTML
 
   <div class="card-section display-flex">
     <div class="flex-stretch"><strong>Sub Total</strong></div>
-    <div class="flex-none">&dollar;$cartfixed</div>
+    <div class="flex-none">&dollar;$sub</div>
   </div>
 
   <div class="card-section display-flex">
@@ -141,6 +127,10 @@ return <<<HTML
   <div class="card-section display-flex" style="font-size:1.1em;">
     <div class="flex-stretch"><strong>Total</strong></div>
     <div class="flex-none">&dollar;$total</div>
+  </div>
+
+  <div class="card-section" style="text-align:right; margin-top:1em;">
+    <a href="cart_checkout.php" class="form-button">Proceed to Checkout</a>
   </div>
 
 HTML;
