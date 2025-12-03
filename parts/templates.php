@@ -24,7 +24,6 @@ return $r.<<<HTML
             <input type="hidden" name="product-id" value="$o->id">
             <input type="hidden" name="product-color" value="">
 
-            <!-- Condition dropdown -->
             <div class="form-select" style="width:100%; margin-bottom:0.6em;">
               <select name="product-condition">
                 <option value="New">New</option>
@@ -34,7 +33,6 @@ return $r.<<<HTML
               </select>
             </div>
 
-            <!-- Quantity dropdown -->
             <div class="form-select" style="width:90px; margin-bottom:0.6em;">
               <select name="product-amount">
                 <option value="1">1</option>
@@ -134,6 +132,47 @@ return <<<HTML
   </div>
 
 HTML;
+}
+
+
+
+function recommendedProducts($items) {
+    echo "<div class='grid gap'>";
+    $out = "";
+    foreach($items as $o) {
+        $out = productListTemplate($out, $o);
+    }
+    echo $out;
+    echo "</div>";
+}
+
+
+
+function recommendedCategory($category, $limit=3) {
+    $conn = makeConn();
+    $category = trim(strtolower($category));
+    $result = makeQuery($conn,
+        "SELECT * FROM `products`
+         WHERE LOWER(`category`)='$category'
+         ORDER BY RAND()
+         LIMIT $limit"
+    );
+    recommendedProducts($result);
+}
+
+
+
+function recommendedSimilar($category, $id, $limit=3) {
+    $conn = makeConn();
+    $category = trim(strtolower($category));
+    $result = makeQuery($conn,
+        "SELECT * FROM `products`
+         WHERE LOWER(`category`)='$category'
+         AND `id` <> $id
+         ORDER BY RAND()
+         LIMIT $limit"
+    );
+    recommendedProducts($result);
 }
 
 ?>

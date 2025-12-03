@@ -1,7 +1,6 @@
 <?php
-
 include_once "lib/php/function.php";
-
+include_once "parts/templates.php";
 ?>
 
 <!DOCTYPE html>
@@ -29,7 +28,6 @@ include_once "lib/php/function.php";
     <h1 class="text-center brand-title">Featured Products</h1>
     <div class="grid gap">
       
-      <!-- Eevee -->
       <div class="col-xs-12 col-md-3">
         <figure class="figure product">
           <a href="product_item.php?id=1"><img src="img/eevee.jpg" alt="Eevee Plush"></a>
@@ -49,7 +47,6 @@ include_once "lib/php/function.php";
                 <input type="hidden" name="product-id" value="1">
                 <input type="hidden" name="product-color" value="">
 
-                <!-- Condition -->
                 <div class="form-select" style="margin-bottom:0.4em; max-width:140px;">
                   <select name="product-condition">
                     <option value="New">New</option>
@@ -59,7 +56,6 @@ include_once "lib/php/function.php";
                   </select>
                 </div>
 
-                <!-- Quantity -->
                 <div class="form-select" style="margin-bottom:0.5em; max-width:120px;">
                   <select name="product-amount">
                     <option value="1">1</option>
@@ -78,7 +74,7 @@ include_once "lib/php/function.php";
         </figure>
       </div>
 
-      <!-- Espeon -->
+
       <div class="col-xs-12 col-md-3">
         <figure class="figure product">
           <a href="product_item.php?id=2"><img src="img/espeon.jpg" alt="Espeon Plush"></a>
@@ -125,7 +121,7 @@ include_once "lib/php/function.php";
         </figure>
       </div>
 
-      <!-- Umbreon -->
+
       <div class="col-xs-12 col-md-3">
         <figure class="figure product">
           <a href="product_item.php?id=3"><img src="img/umbreon.jpg" alt="Umbreon Plush"></a>
@@ -172,7 +168,7 @@ include_once "lib/php/function.php";
         </figure>
       </div>
 
-      <!-- Vaporeon -->
+
       <div class="col-xs-12 col-md-3">
         <figure class="figure product">
           <a href="product_item.php?id=5"><img src="img/vaporeon.jpg" alt="Vaporeon Plush"></a>
@@ -221,6 +217,14 @@ include_once "lib/php/function.php";
 
     </div> 
   </div> 
+
+  <div class="container" style="margin-top:3em;">
+    <h2 class="text-center">Latest Plushies</h2>
+    <?php recommendedCategory("plushie"); ?>
+
+    <h2 class="text-center" style="margin-top:3em;">Latest Cards</h2>
+    <?php recommendedCategory("card"); ?>
+  </div>
 
 
   <div class="container" style="padding:4em 0;">

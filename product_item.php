@@ -2,6 +2,21 @@
 include_once "lib/php/function.php";
 
 $product = makeQuery(makeConn(),"SELECT * FROM `products` WHERE `id`=".$_GET['id'])[0];
+
+function recommendedSimilar($cat,$id,$limit=3) {
+    $result = makeQuery(
+        makeConn(),
+        "SELECT * FROM `products`
+         WHERE `category`='$cat'
+         AND `id` <> $id
+         ORDER BY RAND()
+         LIMIT $limit"
+    );
+
+    echo "<div class='grid gap'>";
+    echo array_reduce($result, 'productListTemplate');
+    echo "</div>";
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -36,7 +51,6 @@ $product = makeQuery(makeConn(),"SELECT * FROM `products` WHERE `id`=".$_GET['id
             <input type="hidden" name="product-id" value="<?= $product->id ?>">
             <input type="hidden" name="product-color" value="">
 
-            <!-- Condition -->
             <div class="form-select" style="max-width:200px; margin-bottom:1em;">
               <label class="form-label">Condition</label>
               <select name="product-condition">
@@ -47,7 +61,6 @@ $product = makeQuery(makeConn(),"SELECT * FROM `products` WHERE `id`=".$_GET['id
               </select>
             </div>
 
-            <!-- Quantity -->
             <div class="form-select" style="max-width:150px; margin-bottom:1em;">
               <label class="form-label">Quantity</label>
               <select name="product-amount">
@@ -66,6 +79,13 @@ $product = makeQuery(makeConn(),"SELECT * FROM `products` WHERE `id`=".$_GET['id
         </div>
       </div>
 
+    </div>
+</div>
+
+<div class="container" style="margin-top:2em; margin-bottom:3em;">
+    <div class="card soft">
+        <h2>Recommended Products</h2>
+        <?php recommendedSimilar($product->category, $product->id, 3); ?>
     </div>
 </div>
 
