@@ -1,22 +1,10 @@
 <?php
 include_once "lib/php/function.php";
+include_once "parts/templates.php";
 
 $product = makeQuery(makeConn(),"SELECT * FROM `products` WHERE `id`=".$_GET['id'])[0];
 
-function recommendedSimilar($cat,$id,$limit=3) {
-    $result = makeQuery(
-        makeConn(),
-        "SELECT * FROM `products`
-         WHERE `category`='$cat'
-         AND `id` <> $id
-         ORDER BY RAND()
-         LIMIT $limit"
-    );
-
-    echo "<div class='grid gap'>";
-    echo array_reduce($result, 'productListTemplate');
-    echo "</div>";
-}
+$recommended = recommendedSimilar($product->category, $product->id, 3);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -40,16 +28,14 @@ function recommendedSimilar($cat,$id,$limit=3) {
         <div class="col-xs-12 col-md-6 product-info">
           <h2><?= $product->name ?></h2>
 
-          <div class="price" style="font-weight:700; color:var(--color-main-dark); font-size:1.2em;">
+          <div class="price" style="font-weight:700; font-size:1.2em;">
             $<?= $product->price ?>
           </div>
 
           <p><?= $product->description ?></p>
 
           <form action="cart_actions.php?action=add-to-cart" method="post" style="margin-top:1em;">
-
             <input type="hidden" name="product-id" value="<?= $product->id ?>">
-            <input type="hidden" name="product-color" value="">
 
             <div class="form-select" style="max-width:200px; margin-bottom:1em;">
               <label class="form-label">Condition</label>
@@ -73,7 +59,6 @@ function recommendedSimilar($cat,$id,$limit=3) {
             </div>
 
             <button class="form-button">Add to Cart</button>
-
           </form>
 
         </div>
@@ -85,7 +70,16 @@ function recommendedSimilar($cat,$id,$limit=3) {
 <div class="container" style="margin-top:2em; margin-bottom:3em;">
     <div class="card soft">
         <h2>Recommended Products</h2>
-        <?php recommendedSimilar($product->category, $product->id, 3); ?>
+
+        <div class="grid gap">
+        <?php
+            $out = "";
+            foreach($recommended as $r) {
+                $out = productListTemplate($out, $r);
+            }
+            echo $out;
+        ?>
+        </div>
     </div>
 </div>
 

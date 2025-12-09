@@ -218,13 +218,36 @@ include_once "parts/templates.php";
     </div> 
   </div> 
 
+
+  <!-- LATEST PLUSHIES -->
   <div class="container" style="margin-top:3em;">
     <h2 class="text-center">Latest Plushies</h2>
-    <?php recommendedCategory("plushie"); ?>
+    <div class="grid gap">
+      <?php
+        $plushies = recommendedCategory("plushie");
+        $out = "";
+        foreach($plushies as $p) {
+            $out = productListTemplate($out, $p);
+        }
+        echo $out;
+      ?>
+    </div>
 
+
+    <!-- LATEST CARDS -->
     <h2 class="text-center" style="margin-top:3em;">Latest Cards</h2>
-    <?php recommendedCategory("card"); ?>
+    <div class="grid gap">
+      <?php
+        $cards = recommendedCategory("card");
+        $out = "";
+        foreach($cards as $c) {
+            $out = productListTemplate($out, $c);
+        }
+        echo $out;
+      ?>
+    </div>
   </div>
+
 
 
   <div class="container" style="padding:4em 0;">

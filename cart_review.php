@@ -36,6 +36,11 @@ $cart_items = getCartItems();
 
       <p>Your cart is empty.</p>
 
+      <div style="margin-top:2em;">
+        <h3>Recommended Products</h3>
+        <?php recommendedRandom(3); ?>
+      </div>
+
     <?php endif; ?>
 
   </div>

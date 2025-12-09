@@ -20,26 +20,24 @@
         </form>
     </div>
 
+    <!-- FILTER BUTTONS -->
     <div class="form-control">
-        <div class="display-flex flex-align-center flex-justify-between">
+        <div class="display-flex" style="gap:0.5em;">
+            <button data-filter="category" data-value="" type="button" class="form-button">All</button>
+            <button data-filter="category" data-value="plushie" type="button" class="form-button">Plushie</button>
+            <button data-filter="category" data-value="card" type="button" class="form-button">Card</button>
+        </div>
+    </div>
 
-            <!-- FILTER BUTTONS -->
-            <div class="display-flex" style="gap:0.5em;">
-                <button data-filter="category" data-value="" type="button" class="form-button">All</button>
-                <button data-filter="category" data-value="plushie" type="button" class="form-button">Plushie</button>
-                <button data-filter="category" data-value="card" type="button" class="form-button">Card</button>
-            </div>
-
-            <!-- SORT DROPDOWN -->
-            <div class="form-select" style="min-width:180px;">
-                <select class="js-sort" style="min-width:180px;">
-                    <option value="1">Newest</option>
-                    <option value="2">Oldest</option>
-                    <option value="3">Price Low to High</option>
-                    <option value="4">Price High to Low</option>
-                </select>
-            </div>
-
+    <!-- SORT DROPDOWN -->
+    <div class="form-control" style="margin-top:0.8em;">
+        <div class="form-select" style="min-width:230px;">
+            <select class="js-sort" style="min-width:230px;">
+                <option value="1">Newest</option>
+                <option value="2">Oldest</option>
+                <option value="3">Price Low to High</option>
+                <option value="4">Price High to Low</option>
+            </select>
         </div>
     </div>
 

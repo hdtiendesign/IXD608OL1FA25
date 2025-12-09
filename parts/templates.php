@@ -54,7 +54,6 @@ HTML;
 }
 
 
-
 function cartListTemplate($r,$o){
 
     $options = "";
@@ -98,7 +97,6 @@ HTML;
 }
 
 
-
 function cartTotals() {
 
     $cart = getCartItems();
@@ -135,7 +133,6 @@ HTML;
 }
 
 
-
 function recommendedProducts($items) {
     echo "<div class='grid gap'>";
     $out = "";
@@ -147,20 +144,17 @@ function recommendedProducts($items) {
 }
 
 
-
 function recommendedCategory($category, $limit=3) {
     $conn = makeConn();
     $category = trim(strtolower($category));
     $result = makeQuery($conn,
         "SELECT * FROM `products`
          WHERE LOWER(`category`)='$category'
-         ORDER BY RAND()
+         ORDER BY `date_create` DESC
          LIMIT $limit"
     );
-    recommendedProducts($result);
+    return $result;
 }
-
-
 
 function recommendedSimilar($category, $id, $limit=3) {
     $conn = makeConn();
@@ -172,7 +166,24 @@ function recommendedSimilar($category, $id, $limit=3) {
          ORDER BY RAND()
          LIMIT $limit"
     );
-    recommendedProducts($result);
+    return $result;
+}
+
+function recommendedRandom($limit=3) {
+    $conn = makeConn();
+    $result = makeQuery($conn,
+        "SELECT * FROM `products`
+         ORDER BY RAND()
+         LIMIT $limit"
+    );
+
+    echo "<div class='grid gap'>";
+    $out = "";
+    foreach($result as $o) {
+        $out = productListTemplate($out, $o);
+    }
+    echo $out;
+    echo "</div>";
 }
 
 ?>
